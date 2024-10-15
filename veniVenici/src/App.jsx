@@ -26,7 +26,8 @@ function App() {
 
   return (
     <div className="whole-page">
-      <h1 className="puppy-lane">Puppy Lane🐕‍🦺</h1>
+      <h1>Puppy Lane🐕‍🦺</h1>
+
       <APIForm
         inputs={inputs}
         handleChange={(e) =>

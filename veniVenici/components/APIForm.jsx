@@ -1,5 +1,4 @@
 import React from "react";
-import './APIForm.css'
 import { useState } from "react";
 
 const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
@@ -24,15 +23,14 @@ const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
             height: "1080",
         };
 
-        // if(inputs.url == "" || inputs.url == " "){
-        //     alert("URL cannot be empty");
-        // } 
-        // else{
+        if(inputs.url == "" || inputs.url == " "){
+            alert("URL cannot be empty");
+        } else{
             for(const [key, value] of Object.entries(inputs)) {
                 if(value === ""){
                     inputs[key] = defaultValues[key]
                 }
-            // }
+            }
         }
         makeQuery();
 
@@ -63,7 +61,7 @@ const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
             "x-api-key": apiKey
         });
         
-        const requestOptions = {
+        var requestOptions = {
             method: 'GET',
             headers: headers,
             redirect: 'follow'
@@ -136,7 +134,7 @@ const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
     // );
     return (
         <div>
-            {/* <form onSubmit={submitForm}>
+            <form onSubmit={submitForm}>
                 <label>
                     Puppy Image URL:
                     <input
@@ -147,7 +145,7 @@ const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
                     />
                 </label>
                 <button type="submit">Submit</button>
-            </form> */}
+            </form>
             <div className="puppy-cards">
                 {puppyInfo.map((puppy, index) => (
                     <div key={index} className="puppy-card">
@@ -162,7 +160,6 @@ const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
                     </div>
                 ))}
             </div>
-            <button className="button" type="submit">Submit</button>
             <div className="ban-list">
                 <h3>Ban List</h3>
                 <ul>

@@ -47,11 +47,9 @@
   justify-content: center;
 }
 
-.puppy-lane{
+/* .puppy-lane{
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
+} */
 
 .puppy-cards {
   display: flex;
