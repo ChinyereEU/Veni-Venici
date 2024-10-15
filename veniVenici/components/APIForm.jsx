@@ -108,44 +108,9 @@ const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
         setBanList([...banList, attribute]);
     };
 
-    // return (
-    //     // <div>
-    //     //     <form onSubmit={submitForm}>
-    //     //         <label>
-    //     //             Puppy Image URL:
-    //     //             <input
-    //     //                 type="text"
-    //     //                 name="url"
-    //     //                 value={inputs.url}
-    //     //                 onChange={handleChange}    
-    //     //             />
-    //     //         </label>
-    //     //         <button type="submit">Shuffle</button>
-    //     //     </form>
-    //     //     {puppyInfo.imageUrl && (
-    //     //         <div>
-    //     //             <img src={puppyInfo.imageUrl} alt="Puppy" width="300" />
-    //     //             <p>Name: {puppyInfo.name}</p>
-    //     //             <p>Breed: {puppyInfo.breed}</p>
-    //     //             <p>Age: {puppyInfo.age}</p>
-    //     //         </div>
-    //     //     )}
-    //     // </div>
-    // );
     return (
         <div>
-            <form onSubmit={submitForm}>
-                <label>
-                    Puppy Image URL:
-                    <input
-                        type="text"
-                        name="url"
-                        value={inputs.url}
-                        onChange={handleChange}
-                    />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
+            
             <div className="puppy-cards">
                 {puppyInfo.map((puppy, index) => (
                     <div key={index} className="puppy-card">
@@ -160,6 +125,20 @@ const APIForm = ({inputs, handleChange, onSubmit, apiKey}) => {
                     </div>
                 ))}
             </div>
+            <form onSubmit={submitForm}>
+                <label>
+                    {/* Puppy Image URL:
+                    <input
+                        type="text"
+                        name="url"
+                        value={inputs.url}
+                        onChange={handleChange}
+                    /> */}
+                </label>
+                <div className="button-container">
+                    <button className = "button" type="submit">Next</button>
+                </div>
+            </form>
             <div className="ban-list">
                 <h3>Ban List</h3>
                 <ul>
